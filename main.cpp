@@ -1,7 +1,8 @@
 #include "boostTest.h"
 #include "handler.h"
 #include "todoProgram.h"
-
+#include "dataIO.h"
+#include "groupIO.h"
 #include <iostream>
 #include <assert.h>
 #include <stdarg.h>
@@ -12,13 +13,14 @@ using namespace std;
 
 int main(int argc,char** argv) {
 	cout << "HELLO WORLD" << endl;
-	
+	DataIO::initialize();
+	GroupIO::initialize();
 	//cout << "Running Boost Test" << endl;
 	//if(argc >= 2) {
 	//	char* file = argv[1];
 	//	BoostTest* test = new BoostTest(file);
 	//}
-	
+
 	//cout << "Creating required classes" << endl;
 	// Creating required clases
 	Handler* handler = new Handler();
@@ -46,5 +48,9 @@ int main(int argc,char** argv) {
 			}
 		}
 	}
+	if(handler->getOpenProgramFlag())
+		program->run(handler);
+	GroupIO::destroy();
+	DataIO::destroy();
 	return 0;
 }

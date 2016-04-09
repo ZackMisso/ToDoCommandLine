@@ -2,7 +2,7 @@ CC=clang++
 
 CFLAGS += -std=c++11
 
-PROD = ToDoLogger
+PROD = todo
 
 HDRS = $(shell ls *.h)
 SRCS = $(shell ls *.cpp)

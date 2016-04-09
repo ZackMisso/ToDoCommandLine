@@ -3,10 +3,10 @@
 
 DisplayGroup::DisplayGroup() {
 	todoGroup = 0x0;
-	struct winsize w;
-	ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-	terminalRows = w.ws_row;
-  terminalCols = w.ws_col;
+	//struct winsize w;
+	//ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
+	//terminalRows = w.ws_row;
+  //terminalCols = w.ws_col;
 	topLine = 0;
 }
 
